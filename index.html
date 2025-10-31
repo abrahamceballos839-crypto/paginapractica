@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.min.js">
+    <title>LOGIN HTML</title>
+</head>
+<body>
+
+  <!-- SECTION LOGIN -->
+  <section class="d-flex align-items-center justify-content-center vh-100 bg-info">
+    <div class="card shadow p-4" style="width: 22rem;">
+      <h3 class="text-center mb-3">Inicio de sesión</h3>
+      <form action="" id="login">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input required type="text" id="usuario" class="form-control" placeholder="Ingrese su usuario">
+        </div>
+        <div class="mb-3">
+          <label for="clave" class="form-label">Contraseña</label>
+          <input required type="password" id="clave" class="form-control" placeholder="Ingrese su contraseña">
+        </div>
+        <button type="button" class="btn btn-secondary w-100" onclick="mostrarDatos()">Ingresar</button>
+      </form>
+      <p id="mensaje" class="text-center mt-3 text-danger"></p>
+    </div>
+  </section>
+
+  <!-- SECTION CARDS -->
+  <section class="container my-5 pb-3">
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="/imagenes/hombre5.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Articulo uno :)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="/imagenes/mujer1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Articulo dos :)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="/imagenes/mujer2.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Articulo tres :)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="/imagenes/mujer3.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Articulo cuatro :)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="/imagenes/mujer4.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Articulo cinco :)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <img src="/imagenes/mujer5.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Articulo seis :)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION JAVASCRIPT -->
+  <section class="d-flex align-items-center justify-content-center vh-100">
+    <div class="container py-4">
+      <h3 class="text-center mb-4 text-dark">¡JavaScript!</h3>
+
+      <!-- Datos del receptor -->
+      <div class="card p-4 mb-4 shadow-sm">
+        <h5 class="mb-3">Datos del Receptor:</h5>
+        <div class="row g-3 align-items-center">
+          <div class="col-md-6">
+            <input type="text" id="nombreRazon" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="col-md-6">
+            <input type="text" id="rfctexto" class="form-control" placeholder="RFC">
+          </div>
+          <div class="col-md-4 mt-3">
+            <label class="form-label mb-1">No. de Conceptos:</label>
+            <input type="number" id="nConceptos" class="form-control" min="1">
+          </div>
+          <div class="col-md-8 d-flex align-items-end mt-3">
+            <button class="btn btn-success ms-auto" onclick="obtenerDatosReceptor()">Generar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conceptos dinámicos -->
+      <div class="card p-4 mb-4 shadow-sm bg-light text-dark">
+        <h5 class="mb-3">Conceptos:</h5>
+        <div id="contenedorConceptos"></div>
+
+        <div class="d-flex justify-content-end mt-3">
+          <button class="btn btn-light" id="calcularValores" onclick="obtenerDatosConceptos()">Calcular Valoreso</button>
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button class="btn btn-dark" id="agregarConcepto" onclick="agregarConcepto()">Agregar Concepto</button>
+        </div>
+      </div>
+
+      <!-- Totales -->
+      <div class="card p-3 w-50 ms-auto shadow-sm">
+        <div class="d-flex justify-content-between">
+          <span >Subtotal:</span><span id="subtotal">0.00</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <span >IVA:</span><span id="iva">0.00</span>
+        </div>
+        <div class="d-flex justify-content-between fw-bold">
+          <span >Total:</span><span id="total">0.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="bootstrap.min.js"></script>
+  <script src="funciones.js"></script>
+</body>
+
+</html>
